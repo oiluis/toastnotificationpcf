@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <control namespace="GBB" constructor="ToastNotificationComponent" version="0.0.12" display-name-key="ToastNotificationComponent" description-key="ToastNotificationComponent description" control-type="standard">
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="Content" display-name-key="Content" description-key="Content" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="StartAnimationToken" display-name-key="StartAnimationToken" description-key="StartAnimationToken" of-type="SingleLine.Text" usage="input" />
+    <property name="Duration" display-name-key="Duration" description-key="Duration" of-type="Whole.None" usage="input" />
+    <property name="Dismissible" display-name-key="Dismissible" description-key="Dismissible" of-type="TwoOptions" usage="input" />
+    <property name="NotificationType" display-name-key="NotificationType" description-key="NotificationType" usage="input" of-type="Enum" required="false">
+      <value name="Success" display-name-key="Success" description-key="Success" default="true">Success</value>
+      <value name="Error" display-name-key="Error" description-key="Error">Error</value>
+      <value name="Info" display-name-key="Info" description-key="Info">Info</value>
+      <value name="Teams" display-name-key="Teams" description-key="Teams">teams</value>
+    </property>
+    <property name="HorizontalAlginment" display-name-key="X" description-key="HorizontalAlginment" usage="input" of-type="Enum" required="false">
+      <value name="Left" display-name-key="Lef" description-key="Left" default="true">left</value>
+      <value name="Center" display-name-key="Center" description-key="Center">center</value>
+      <value name="Right" display-name-key="Right" description-key="Right">right</value>
+    </property>
+    <property name="VerticalAlginment" display-name-key="X" description-key="VerticalAlginment" usage="input" of-type="Enum" required="false">
+      <value name="Top" display-name-key="Top" description-key="Top" default="true">top</value>
+      <value name="Center" display-name-key="Center" description-key="Center">center</value>
+      <value name="Bottom" display-name-key="Bottom" description-key="Bottom">bottom</value>
+    </property>
+    <property name="OffsetY" display-name-key="OffsetY" description-key="OffsetY" of-type="Whole.None" usage="input" />
+    <property name="OffsetX" display-name-key="OffsetX" description-key="OffsetX" of-type="Whole.None" usage="input" />
+    <!-- 
+      Property node's of-type attribute can be of-type-group attribute. 
+      Example:
+      <type-group name="numbers">
+        <type>Whole.None</type>
+        <type>Currency</type>
+        <type>FP</type>
+        <type>Decimal</type>
+      </type-group>
+      <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type-group="numbers" usage="bound" required="true" />
+    -->
+    <resources>
+      <code path="index.ts" order="1" />
+      <css path="css/notyf.min.css" order="1" />
+      <css path="css/style.css" order="1" />
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/ToastNotificationComponent.css" order="1" />
+      <resx path="strings/ToastNotificationComponent.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>
